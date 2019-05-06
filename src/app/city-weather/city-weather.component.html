@@ -1,7 +1,10 @@
 <section routerLink="/details/{{name}}" class="weather__card">
-  <span class="city-name__text">
+<!--   <span class="city-name__text">
     {{ name }}
-  </span>
+  </span> -->
+
+  <input [(ngModel)]='name' (keyup)="inputCityChange();" (click)="stopPropagation($event);" placeholder="City Name" class="ng-pristine ng-valid ng-touched">
+
   <div class="weather-icon__container">
     <!-- Add weather icon depending on condition -->
 
@@ -13,13 +16,13 @@
   </div>
  -->
 
-  <div [ngSwitch]="condition">
-    <i *ngSwitchCase="'clouds'" class="fas fa-cloud-sun fa-10x"></i>
-    <i *ngSwitchCase="'rain'" class="fas fa-cloud-rain fa-10x"></i>
-    <i *ngSwitchCase="'sun'" class="fas fa-sun fa-10x"></i>
-    <i *ngSwitchCase="'storm'" class="fas fa-poo-storm fa-10x"></i>
-    <i *ngSwitchCase="'snow'" class="fas fa-snowflake fa-10x"></i>
-  </div>
+    <div [ngSwitch]="condition">
+      <i *ngSwitchCase="'clouds'" class="fas fa-cloud-sun fa-10x"></i>
+      <i *ngSwitchCase="'rain'" class="fas fa-cloud-rain fa-10x"></i>
+      <i *ngSwitchCase="'sun'" class="fas fa-sun fa-10x"></i>
+      <i *ngSwitchCase="'storm'" class="fas fa-poo-storm fa-10x"></i>
+      <i *ngSwitchCase="'snow'" class="fas fa-snowflake fa-10x"></i>
+    </div>
     <i class="fas fa-10x"></i>
   </div>
 

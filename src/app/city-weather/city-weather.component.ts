@@ -22,6 +22,14 @@ export class CityWeatherComponent implements OnInit {
     this.loadWeather();
   }
 
+  inputCityChange(){
+    this.loadWeather();
+  }  
+
+  stopPropagation(event){
+    event.stopPropagation();
+  }
+
   loadWeather() {
     this.condition = this.weatherService.getWeatherState(this.name);
     this.currentTemp = this.weatherService.getCurrentTemp(this.name);

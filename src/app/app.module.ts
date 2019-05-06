@@ -12,6 +12,8 @@ import { HomeComponent } from './home/home.component';
 import { CityWeatherComponent } from './city-weather/city-weather.component';
 import { DetailsComponent } from './details/details.component';
 
+import { FormsModule } from '@angular/forms';
+
 
 @NgModule({
   declarations: [
@@ -23,6 +25,7 @@ import { DetailsComponent } from './details/details.component';
   imports: [
     BrowserModule,
     AppRoutingModule,
+    FormsModule
   ],
   providers: [],
   bootstrap: [AppComponent]
