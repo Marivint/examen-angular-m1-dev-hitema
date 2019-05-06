@@ -4,6 +4,22 @@
   </span>
   <div class="weather-icon__container">
     <!-- Add weather icon depending on condition -->
+
+<!--   <div ng-switch="condition">
+          <i ng-switch-case="condition == sun" class="fas fa-sun"></i>
+          <i ng-switch-case="condition == clouds" class="fas fa-cloud"></i>
+      <div ng-switch-default>
+      </div>
+  </div>
+ -->
+  <div [ngSwitch]="condition">
+    <i *ngSwitchCase="'clouds'" class="fas fa-cloud-sun fa-10x"></i>
+    <i *ngSwitchCase="'rain'" class="fas fa-cloud-rain fa-10x"></i>
+    <i *ngSwitchCase="'sun'" class="fas fa-sun fa-10x"></i>
+    <i *ngSwitchCase="'storm'" class="fas fa-poo-storm fa-10x"></i>
+    <i *ngSwitchCase="'snow'" class="fas fa-snowflake fa-10x"></i>
+  </div>
+
     <i class="fas fa-10x"></i>
   </div>
   <div class="temperature-text__container">
