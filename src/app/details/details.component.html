@@ -48,10 +48,10 @@
     <main class="body-content__wrapper">
       <section class="forecast__container">
         <!-- display forecast for the whole week --> 
-        <div class="day-weather__container">
-          <span class="day-name"> </span>
-          <span class="day-temp"> °</span>
-          <span class="day-condition"> </span>
+        <div *ngFor="let forec of forecast" class="day-weather__container">
+          <span class="day-name">{{forec.name}}</span>
+          <span class="day-temp"> {{forec.temp}}</span>
+          <span class="day-condition">{{forec.condition}}</span>
         </div>
       </section>
     </main>

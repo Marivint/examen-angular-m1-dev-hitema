@@ -9,6 +9,7 @@ import { WeatherService } from '../weather.service';
 })
 export class DetailsComponent implements OnInit {
   city: string;
+  forecast: object;
   state: string;
   temp: number;
   hum: number;
@@ -20,11 +21,12 @@ export class DetailsComponent implements OnInit {
 
   ngOnInit() {
     this.activeRouter.paramMap.subscribe((route: any) => {
-      this.city = route.params.city;
-      this.state = this.weatherService.getWeatherState(this.city);
-      this.temp = this.weatherService.getCurrentTemp(this.city);
-      this.hum = this.weatherService.getCurrentHum(this.city);
-      this.wind = this.weatherService.getCurrentWind(this.city);
+      this.city     = route.params.city;
+      this.forecast = this.weatherService.getForecast();
+      this.state    = this.weatherService.getWeatherState(this.city);
+      this.temp     = this.weatherService.getCurrentTemp(this.city);
+      this.hum      = this.weatherService.getCurrentHum(this.city);
+      this.wind     = this.weatherService.getCurrentWind(this.city);
     });
   }
 }
